@@ -1,3 +1,7 @@
+## 安装
+    
+    npm i mobx-provide-pro
+
 ## API参考
 
 - provide
