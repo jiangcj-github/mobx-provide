@@ -1,6 +1,6 @@
 ## 安装
     
-    npm i mobx-provide-pro
+    npm i mobx-provide-pro --save
 
 ## API参考
 
