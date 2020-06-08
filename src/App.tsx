@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {connect, provide, IStoreBase, IProvideProps} from './lib/mobx-provide';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class AppStore extends IStoreBase{
+
+    constructor(params: any = "hello") {
+        super();
+        this.message = params;
+    }
+
+    public message = "";
 }
 
-export default App;
+interface IProps extends IProvideProps {
+    db?: AppStore,
+}
+
+@provide("db", AppStore)
+@connect("db")
+class App extends React.Component<IProps> {
+
+    public render() {
+        const messgae = this.props.db?.message;
+        return (
+            <div className="App">
+                app 
+                <AppInner /> 
+            </div>
+        );
+    }
+}
+
+const AppInner = connect("db")((props: any) => {
+    return <p>{props.db.message}</p>
+})
+
+const appStore = new AppStore("world");
+
+export default () => {
+    return <>
+        <App />
+        <App provide={[appStore]}/>
+    </>
+}
+
