@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect, provide, IStoreBase, IProvideProps, getStoreById} from '../../lib/mobx-provide';
+import {connect, provide, IStoreBase, IProvideProps, getStoreById} from '../lib/mobx-provide';
 import {observable, action} from "mobx"
 import {observer} from 'mobx-react';
 
