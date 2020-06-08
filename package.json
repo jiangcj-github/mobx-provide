@@ -1,6 +1,6 @@
 {
   "name": "mobx-provide-pro",
-  "version": "0.1.1",
+  "version": "1.0.4",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -45,8 +45,12 @@
     "@storybook/preset-create-react-app": "^3.0.0",
     "@storybook/react": "^5.3.19"
   },
+  "files": [
+    "lib"
+  ],
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "main.js",
+  "main": "lib/mobx-provide.js",
+  "types": "lib/mobx-provide.d.ts",
   "keywords": [],
   "author": "",
   "license": "ISC",
